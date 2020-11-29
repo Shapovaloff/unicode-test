@@ -63,7 +63,7 @@ requireDir("./gulp-tasks/");
 
 export { paths };
 
-export const development = gulp.series("clean",
+export const development = gulp.series("clean", "smart-grid",
     gulp.parallel(["views", "styles", "scripts", "images", "webp", "sprites", "fonts", "favicons"]),
     gulp.parallel("serve"));
 

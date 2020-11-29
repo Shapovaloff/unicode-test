@@ -1,0 +1,39 @@
+.breadcrumbs__list {
+    @include reset-list;
+    font-size: 14px;
+    line-height: 22px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 16px 0;
+}
+
+.breadcrumbs__item {
+    &:not(:last-child)::after {
+        content: "›";
+        padding: 0 3px 0 0;
+        pointer-events: none;
+        color: #b8bdc1;
+    }
+}
+
+.breadcrumbs__link {
+
+    @include hover-focus-active {
+        color: #6c94c4;
+    }
+    text-decoration: none;
+    color: #b8bdc1;
+
+    &--current {
+        pointer-events: none;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .breadcrumbs {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+

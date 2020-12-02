@@ -81,7 +81,7 @@
     <body>
         <header class="page-header">
   <div class="page-header__wrapper">
-    <button class="page-header__menu-toggle" type="button" aria-label="Меню">
+    <button class="page-header__menu-toggle page-header__menu-toggle--active" type="button" aria-label="Меню">
       <span></span>
       <span></span>
       <span></span>
@@ -158,182 +158,200 @@
 
     <div class="page-header__language-select">
       <div class="language-select">
-        <a class="language-select__open-btn" type="button">
-          <img class="language-select__flag" width="19" height="20" src="img/country-flags/ru.png" alt="Русский">
-          <span class="language-select__text">Русский</span>
+  <a class="language-select__open-btn" type="button">
+    <img class="language-select__flag" width="19" height="20" src="img/country-flags/ru.png" alt="Русский">
+    <span class="language-select__text">Русский</span>
 
-          <svg class="language-select__arrow" width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0.94 0.726748L4 3.78008L7.06 0.726748L8 1.66675L4 5.66675L0 1.66675L0.94 0.726748Z" fill="currentColor" />
-          </svg>
-        </a>
+    <svg class="language-select__arrow" width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0.94 0.726748L4 3.78008L7.06 0.726748L8 1.66675L4 5.66675L0 1.66675L0.94 0.726748Z" fill="currentColor" />
+    </svg>
+  </a>
+  <button type="button" class="language-select__btn-mobile js-language-btn">
+    <svg viewBox="0 0 8 14" width="8" height="14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 7.06502L1.13685 5.92817L7.79714 12.4929L6.59625 13.6612L0 7.06502Z" fill="currentColor"></path>
+      <path d="M1.13685 8.20186L0 7.06502L6.59619 0.468811L7.7562 1.75421L1.13685 8.20186Z" fill="currentColor"></path>
+    </svg>
+    <span>Язык</span>
+  </button>
 
-        <ul class="language-select__list">
-          <li class="language-select__item">
-            <a class="language-select__link" href="#">
-              <img class="language-select__flag" width="19" height="20" src="img/country-flags/en.png"
-                alt="English">
-              <span>English</span>
-            </a>
-          </li>
-          <li class="language-select__item">
-            <a class="language-select__link" href="#">
-              <img class="language-select__flag" width="19" height="20" src="img/country-flags/de.png"
-                alt="Deutsch">
-              <span>Deutsch</span>
-            </a>
-          </li>
-          <li class="language-select__item">
-            <a class="language-select__link" href="#">
-              <img class="language-select__flag" width="19" height="20" src="img/country-flags/es.png"
-                alt="Español">
-              <span>Español</span>
-            </a>
-          </li>
-          <li class="language-select__item">
-            <a class="language-select__link" href="#">
-              <img class="language-select__flag" width="19" height="20" src="img/country-flags/fr.png"
-                alt="Français">
-              <span>Français</span>
-            </a>
-          </li>
-          <li class="language-select__item">
-            <a class="language-select__link" href="#">
-              <img class="language-select__flag" width="19" height="20" src="img/country-flags/it.png"
-                alt="Italiano">
-              <span>Italiano</span>
-            </a>
-          </li>
-          <li class="language-select__item">
-            <a class="language-select__link" href="#">
-              <img class="language-select__flag" width="19" height="20" src="img/country-flags/pt.png"
-                alt="Português">
-              <span>Português</span>
-            </a>
-          </li>
-          <li class="language-select__item">
-            <a class="language-select__link" href="#">
-              <img class="language-select__flag" width="19" height="20" src="img/country-flags/pl.png" alt="Polski">
-              <span>Polski</span>
-            </a>
-          </li>
-          <li class="language-select__item">
-            <a class="language-select__link" href="#">
-              <img class="language-select__flag" width="19" height="20" src="img/country-flags/tr.png" alt="Türkçe">
-              <span>Türkçe</span>
-            </a>
-          </li>
-          <li class="language-select__item">
-            <a class="language-select__link" href="#">
-              <img class="language-select__flag" width="19" height="20" src="img/country-flags/cn.png" alt="中文">
-              <span>中文</span>
-            </a>
-          </li>
-          <li class="language-select__item">
-            <a class="language-select__link" href="#">
-              <img class="language-select__flag" width="19" height="20" src="img/country-flags/th.png"
-                alt="ภาษาไทย">
-              <span>ภาษาไทย</span>
-            </a>
-          </li>
-          <li class="language-select__item">
-            <a class="language-select__link" href="#">
-              <img class="language-select__flag" width="19" height="20" src="img/country-flags/hu.png" alt="Magyar">
-              <span>Magyar</span>
-            </a>
-          </li>
-          <li class="language-select__item">
-            <a class="language-select__link" href="#">
-              <img class="language-select__flag" width="19" height="20" src="img/country-flags/ro.png" alt="Română">
-              <span>Română</span>
-            </a>
-          </li>
-          <li class="language-select__item">
-            <a class="language-select__link" href="#">
-              <img class="language-select__flag" width="19" height="20" src="img/country-flags/jp.png" alt="日本語">
-              <span>日本語</span>
-            </a>
-          </li>
+  <ul class="language-select__list">
+    <li class="language-select__item">
+      <a class="language-select__link" href="#">
+        <img class="language-select__flag" width="19" height="20" src="img/country-flags/en.png"
+          alt="English">
+        <span>English</span>
+      </a>
+    </li>
+    <li class="language-select__item">
+      <a class="language-select__link" href="#">
+        <img class="language-select__flag" width="19" height="20" src="img/country-flags/de.png"
+          alt="Deutsch">
+        <span>Deutsch</span>
+      </a>
+    </li>
+    <li class="language-select__item">
+      <a class="language-select__link" href="#">
+        <img class="language-select__flag" width="19" height="20" src="img/country-flags/es.png"
+          alt="Español">
+        <span>Español</span>
+      </a>
+    </li>
+    <li class="language-select__item">
+      <a class="language-select__link" href="#">
+        <img class="language-select__flag" width="19" height="20" src="img/country-flags/fr.png"
+          alt="Français">
+        <span>Français</span>
+      </a>
+    </li>
+    <li class="language-select__item">
+      <a class="language-select__link" href="#">
+        <img class="language-select__flag" width="19" height="20" src="img/country-flags/it.png"
+          alt="Italiano">
+        <span>Italiano</span>
+      </a>
+    </li>
+    <li class="language-select__item">
+      <a class="language-select__link" href="#">
+        <img class="language-select__flag" width="19" height="20" src="img/country-flags/pt.png"
+          alt="Português">
+        <span>Português</span>
+      </a>
+    </li>
+    <li class="language-select__item">
+      <a class="language-select__link" href="#">
+        <img class="language-select__flag" width="19" height="20" src="img/country-flags/pl.png" alt="Polski">
+        <span>Polski</span>
+      </a>
+    </li>
+    <li class="language-select__item">
+      <a class="language-select__link" href="#">
+        <img class="language-select__flag" width="19" height="20" src="img/country-flags/tr.png" alt="Türkçe">
+        <span>Türkçe</span>
+      </a>
+    </li>
+    <li class="language-select__item">
+      <a class="language-select__link" href="#">
+        <img class="language-select__flag" width="19" height="20" src="img/country-flags/cn.png" alt="中文">
+        <span>中文</span>
+      </a>
+    </li>
+    <li class="language-select__item">
+      <a class="language-select__link" href="#">
+        <img class="language-select__flag" width="19" height="20" src="img/country-flags/th.png"
+          alt="ภาษาไทย">
+        <span>ภาษาไทย</span>
+      </a>
+    </li>
+    <li class="language-select__item">
+      <a class="language-select__link" href="#">
+        <img class="language-select__flag" width="19" height="20" src="img/country-flags/hu.png" alt="Magyar">
+        <span>Magyar</span>
+      </a>
+    </li>
+    <li class="language-select__item">
+      <a class="language-select__link" href="#">
+        <img class="language-select__flag" width="19" height="20" src="img/country-flags/ro.png" alt="Română">
+        <span>Română</span>
+      </a>
+    </li>
+    <li class="language-select__item">
+      <a class="language-select__link" href="#">
+        <img class="language-select__flag" width="19" height="20" src="img/country-flags/jp.png" alt="日本語">
+        <span>日本語</span>
+      </a>
+    </li>
 
-          <li class="language-select__item">
-            <a class="language-select__link" href="#">
-              <img class="language-select__flag" width="19" height="20" src="img/country-flags/kr.png" alt="한국의">
-              <span>한국의</span>
-            </a>
-          </li>
+    <li class="language-select__item">
+      <a class="language-select__link" href="#">
+        <img class="language-select__flag" width="19" height="20" src="img/country-flags/kr.png" alt="한국의">
+        <span>한국의</span>
+      </a>
+    </li>
 
-          <li class="language-select__item">
-            <a class="language-select__link" href="#">
-              <img class="language-select__flag" width="19" height="20" src="img/country-flags/hi.png" alt="हिन्दी">
-              <span>हिन्दी</span>
-            </a>
-          </li>
-        </ul>
-      </div>
+    <li class="language-select__item">
+      <a class="language-select__link" href="#">
+        <img class="language-select__flag" width="19" height="20" src="img/country-flags/hi.png" alt="हिन्दी">
+        <span>हिन्दी</span>
+      </a>
+    </li>
+  </ul>
+</div>
     </div>
   </div>
 
   <div class="page-header__navigation">
     <nav class="main-navigation container js-dropdown-menu">
-      <ul class="main-navigation__list">
-        <li class="main-navigation__item js-dropdown-menu-item">
-          <a class="main-navigation__link" href="#" title="Разделы Юникода">
-            Юникод
-          </a>
-        </li>
-        <li class="main-navigation__item js-dropdown-menu-item">
-          <a class="main-navigation__link" href="#" title="Эмоджи в Юникоде">
-            Эмоджи
-          </a>
-        </li>
-        <li class="main-navigation__item js-dropdown-menu-item">
-          <a class="main-navigation__link main-navigation__link--current" href="#"
-            title="Тематические наборы символов">
-            Наборы
-          </a>
-        </li>
-        <li class="main-navigation__item js-dropdown-menu-item">
-          <a class="main-navigation__link" href="#" title="Инструменты">
-            Инструменты
-          </a>
-        </li>
-        <li class="main-navigation__item js-dropdown-menu-item">
-          <a class="main-navigation__link" href="#" title="Алфавиты в Юникоде">
-            Алфавиты
-          </a>
-        </li>
-        <li class="main-navigation__item js-dropdown-menu-item">
-          <a class="main-navigation__link" href="#" title="HTML-мнемоники">
-            HTML-мнемоники
-          </a>
-        </li>
-        <li class="main-navigation__item js-dropdown-menu-item">
-          <a class="main-navigation__link" href="#" title="Alt-коды">
-            Alt-коды
-          </a>
-        </li>
-        <li class="main-navigation__item js-dropdown-menu-item">
-          <a class="main-navigation__link" href="#" title="Символы для праздников">
-            Праздники
-          </a>
-        </li>
+  <button type="button" class="main-navigation__btn menu-item-wrapper__link">
+    <span>Язык</span>
+    <span class="main-navigation__current">
+      <img class="main-navigation__flag" src="img/country-flags/ru.png" alt="Русский">
+      Русский
+      <svg class="main-navigation__current-svg" viewBox="0 0 9 14" width="9" height="14" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8.0166 6.99998L6.87975 8.13683L0.219466 1.57206L1.42035 0.40378L8.0166 6.99998Z" fill="currentColor"></path>
+        <path d="M6.87975 5.86314L8.0166 6.99998L1.42041 13.5962L0.260401 12.3108L6.87975 5.86314Z" fill="currentColor"></path>
+      </svg>
+    </span>
+  </button>
+  <ul class="main-navigation__list">
+    <li class="main-navigation__item js-dropdown-menu-item">
+      <a class="main-navigation__link" href="#" title="Разделы Юникода">
+        Юникод
+      </a>
+    </li>
+    <li class="main-navigation__item js-dropdown-menu-item">
+      <a class="main-navigation__link" href="#" title="Эмоджи в Юникоде">
+        Эмоджи
+      </a>
+    </li>
+    <li class="main-navigation__item js-dropdown-menu-item">
+      <a class="main-navigation__link main-navigation__link--current" href="#"
+        title="Тематические наборы символов">
+        Наборы
+      </a>
+    </li>
+    <li class="main-navigation__item js-dropdown-menu-item">
+      <a class="main-navigation__link" href="#" title="Инструменты">
+        Инструменты
+      </a>
+    </li>
+    <li class="main-navigation__item js-dropdown-menu-item">
+      <a class="main-navigation__link" href="#" title="Алфавиты в Юникоде">
+        Алфавиты
+      </a>
+    </li>
+    <li class="main-navigation__item js-dropdown-menu-item">
+      <a class="main-navigation__link" href="#" title="HTML-мнемоники">
+        HTML-мнемоники
+      </a>
+    </li>
+    <li class="main-navigation__item js-dropdown-menu-item">
+      <a class="main-navigation__link" href="#" title="Alt-коды">
+        Alt-коды
+      </a>
+    </li>
+    <li class="main-navigation__item js-dropdown-menu-item">
+      <a class="main-navigation__link" href="#" title="Символы для праздников">
+        Праздники
+      </a>
+    </li>
 
-        <li class="main-navigation__item js-dropdown-menu-button">
-          <a class="main-navigation__link">
-            <svg version="1.1" viewBox="0 0 10.23 9.6" xml:space="preserve" width="10px" height="10px">
-              <g>
-                <g>
-                  <path fill="#ffffff" d="M5.22,4.9L2.48,1.09L1.01,2.38L3,5L0.97,7.74L2.48,8.9l2.73-3.81V4.9z M6.48,1.09L5.01,2.38L7,5L4.97,7.74
-                    L6.48,8.9l2.73-3.81V4.9L6.48,1.09z" />
-                </g>
-              </g>
-            </svg>
-          </a>
+    <li class="main-navigation__item js-dropdown-menu-button">
+      <a class="main-navigation__link">
+        <svg version="1.1" viewBox="0 0 10.23 9.6" xml:space="preserve" width="10px" height="10px">
+          <g>
+            <g>
+              <path fill="#ffffff" d="M5.22,4.9L2.48,1.09L1.01,2.38L3,5L0.97,7.74L2.48,8.9l2.73-3.81V4.9z M6.48,1.09L5.01,2.38L7,5L4.97,7.74
+                L6.48,8.9l2.73-3.81V4.9L6.48,1.09z" />
+            </g>
+          </g>
+        </svg>
+      </a>
 
-          <ul class="main-navigation__list js-dropdown-menu-list">
-          </ul>
-        </li>
+      <ul class="main-navigation__list js-dropdown-menu-list">
       </ul>
-    </nav>
+    </li>
+  </ul>
+</nav>
   </div>
   
 </header>

@@ -1,0 +1,189 @@
+.main-navigation {
+    flex-wrap: nowrap;
+    overflow: hidden;
+
+    @media screen and (max-width: 768px) {
+        position: relative;
+        max-width: 100%;
+        margin: 0;
+    }
+}
+
+.main-navigation.js-enabled {
+    overflow: visible;
+}
+
+.main-navigation.js-enabled .main-navigation__item {
+    flex-grow: 1;
+}
+
+.main-navigation .js-dropdown-menu-button {
+    cursor: pointer;
+    position: relative;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.main-navigation .js-dropdown-menu-button.js-enabled {
+    &:hover, &:focus, &:active {
+        background-color: #fc5397;
+    }
+}
+
+.main-navigation .js-dropdown-menu-button.js-enabled:hover .js-dropdown-menu-list, .main-navigation .js-dropdown-menu-button.js-enabled:focus .js-dropdown-menu-list, .main-navigation .js-dropdown-menu-button.js-enabled:active .js-dropdown-menu-list {
+    display: block;
+}
+
+.main-navigation .js-dropdown-menu-button.js-enabled.js-processed {
+    visibility: visible;
+    pointer-events: initial;
+}
+
+.main-navigation .js-dropdown-menu-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: auto;
+    background-color: #7c468d;
+}
+
+.main-navigation .js-dropdown-menu-list .main-navigation__link {
+    text-align: left;
+}
+
+.main-navigation.container {
+    max-width: 1018px;
+    margin: 0 auto;
+
+    @media screen and (max-width: 1599px) {
+        width: 970px;
+        margin-left: 0;
+    }
+
+    @media screen and (max-width: 1172px) {
+        width: auto;
+        max-width: 1018px;
+        margin-left: auto;
+    }
+}
+
+.main-navigation__list {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 0;
+    list-style: none;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+.main-navigation__item {
+    flex-shrink: 0;
+
+    @media screen and (max-width: 1023px) {
+        flex-grow: 1;
+    }
+}
+
+.main-navigation__link {
+    display: block;
+    padding: 6px 25px;
+    text-decoration: none;
+    text-align: center;
+    color: #ffffff;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: background-color 0.3s ease-in-out;
+
+    @media screen and (max-width: 1599px) {
+        padding: 6px 24px;
+    }
+
+    @media screen and (max-width: 1172px) {
+        padding: 6px 25px;
+    }
+
+    @media screen and (max-width: 1024px) {
+        padding: 6px 16px;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    @media screen and (max-width: 768px) {
+        min-height: 46px;
+        padding: 16px 15px 15px;
+        color: #1a1a1a;
+        font-size: 14px;
+        line-height: 14px;
+        text-align: left;
+        font-weight: 400;
+        border-bottom: 1px solid #dedede;
+
+        &--current {
+            background-color: #e6e6e6;
+
+            &:hover, &:focus, &:active {
+                background-color: #e6e6e6;
+            }
+        }
+
+        &:hover, &:focus, &:active {
+            background-color: #fff;
+        }
+    }
+
+    &--current {
+        background-color: #714080;
+    }
+
+    &:hover, &:focus, &:active {
+        background-color: #fc5397;
+    }
+}
+
+.main-navigation__btn {
+    display: none;
+
+    @media screen and (max-width: 768px) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        padding-left: 15px;
+        padding-right: 15px;
+        background-color: #894d9a;
+        color: #ffffff;
+        font-size: 14px;
+        line-height: 14px;
+        border-top: 1px solid #dedede;
+    }
+}
+
+.main-navigation__current {
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.main-navigation__flag {
+    width: auto;
+    height: 20px;
+    margin-right: 8px;
+}
+
+.main-navigation__current-svg {
+    margin-left: 8px;
+    color: #fff;
+}

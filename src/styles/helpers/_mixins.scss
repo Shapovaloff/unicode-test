@@ -4,8 +4,16 @@
   list-style: none;
 }
 
+@mixin reset-button {
+  padding: 0;
+  outline: none;
+  background: none;
+  border: none;
+}
+
 @mixin hover-focus-active () {
   &:hover,
   &:focus,
   &:active { @content }
 }
+

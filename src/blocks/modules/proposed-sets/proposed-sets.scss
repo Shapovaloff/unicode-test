@@ -4,14 +4,21 @@
     display: flex;
     flex-wrap: wrap;
     height: auto;
+
+    @media screen and (max-width: 1023px) {
+        flex-wrap: nowrap;
+        // width: 100%;
+    }
 }
 
 .proposed-sets__item {
-    width: calc(50% - 4px);
-    margin-bottom: 8px;
+    width: 102px;
+    margin-bottom: 0;
 
     &:nth-child(2n - 1) {
         margin-right: 8px;
+        width: 102px;
+        margin-bottom: 0;
     }
 
     &--new .proposed-sets__link {

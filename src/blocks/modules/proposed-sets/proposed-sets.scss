@@ -15,10 +15,11 @@
     width: 102px;
     margin-bottom: 0;
 
-    &:nth-child(2n - 1) {
-        margin-right: 8px;
-        width: 102px;
-        margin-bottom: 0;
+    @media screen and (max-width: 1024px) {
+        flex-shrink: 0;
+        position: relative;
+        width: 100%;
+        height: 100%;
     }
 
     &--new .proposed-sets__link {
@@ -41,6 +42,12 @@
             text-align: center;
             letter-spacing: 2px;
         }
+    }
+
+    &:nth-child(2n - 1) {
+        margin-right: 8px;
+        width: 102px;
+        margin-bottom: 0;
     }
 }
 

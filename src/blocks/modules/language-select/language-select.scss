@@ -36,6 +36,7 @@
 
 .language-select__btn-mobile {
     @include reset-button;
+    display: none;
     padding-left: 16px;
     padding-right: 16px;
     padding-top: 15px;
@@ -44,11 +45,14 @@
     background-color: #894d9a;
     color: #fff;
     font-weight: 400;
-    display: flex;
     align-items: center;
     width: 100%;
     font-size: 14px;
     line-height: 1;
+
+    @media screen and (max-width: 768px) {
+        display: flex;
+    }
 }
 
 .language-select__btn-mobile svg {
@@ -73,7 +77,7 @@
 
 .language-select__list {
     @include reset-list;
-    // display: none; // временно
+    display: none; // временно
     position: absolute;
     top: 39px;
     left: 0;

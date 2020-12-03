@@ -72,6 +72,7 @@
     },
     "dependencies": {
         "clipboard": "^2.0.6",
+        "critical": "^2.0.6",
         "swiper": "^6.3.5",
         "tippy.js": "^6.2.7"
     },

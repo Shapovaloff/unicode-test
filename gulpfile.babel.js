@@ -16,10 +16,7 @@ const requireDir = require("require-dir"),
             ]
         },
         styles: {
-            src: [
-                "./src/styles/main.{scss,sass}",
-                "./src/styles/mobile-main.{scss,sass}",
-            ],
+            src: "./src/styles/main.{scss,sass}",
             dist: "./dist/styles/",
             watch: [
                 "./src/blocks/**/*.{scss,sass}",

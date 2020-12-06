@@ -16,8 +16,8 @@
     }
 }
 
-.breadcrumbs__link {
 
+.breadcrumbs__link {
     @include hover-focus-active {
         color: #6c94c4;
     }
@@ -28,5 +28,3 @@
         pointer-events: none;
     }
 }
-
-

@@ -13,15 +13,16 @@
 .character-list__list {
     @include reset-list();
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     grid-row-gap: 16px;
     margin-top: 16px;
 
-    @media screen and (max-width: 1024px) {
-        display: grid;
-        grid-row-gap: 8px;
-        grid-template-columns: repeat(6, 1fr);
-        margin-top: 20px;
+    @media screen and (max-width: 580px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media screen and (max-width: 370px) {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 

@@ -2,34 +2,15 @@
     @include reset-list();
     box-sizing: border-box;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     height: auto;
-
-    @media screen and (max-width: 1023px) {
-        flex-wrap: nowrap;
-        // width: 100%;
-    }
 }
 
 .proposed-sets__item {
+    flex-shrink: 0;
+    position: relative;
     width: 102px;
-    margin-bottom: 8px;
-
-    &:nth-child(2n - 1) {
-        margin-right: 8px;
-        width: 102px;
-    }
-
-    @media screen and (max-width: 1024px) {
-        flex-shrink: 0;
-        position: relative;
-        height: 100%;
-        margin-bottom: 0;
-
-        &:nth-child(2n - 1) {
-            margin-right: 0;
-        }
-    }
+    height: 100%;
 }
 
 .proposed-sets__link {

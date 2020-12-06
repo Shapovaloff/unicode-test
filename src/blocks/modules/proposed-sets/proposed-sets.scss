@@ -23,14 +23,11 @@
     @media screen and (max-width: 1024px) {
         flex-shrink: 0;
         position: relative;
+        width: 100%;
         height: 100%;
-        margin-bottom: 0;
-
-        &:nth-child(2n - 1) {
-            margin-right: 0;
-        }
     }
 }
+
 
 .proposed-sets__link {
 
@@ -99,4 +96,19 @@
     line-height: 16px;
     font-weight: 700;
     text-align: center;
+}
+
+@media screen and (max-width: 1024px) {
+    .proposed-sets {
+        flex-wrap: nowrap;
+    }
+
+    .proposed-sets__item {
+        width: 102px;
+        margin-bottom: 0;
+    
+        &:nth-child(2n - 1) {
+            margin-right: 0;
+        }
+    }
 }

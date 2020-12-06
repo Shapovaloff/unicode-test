@@ -70,3 +70,29 @@
     max-width: 720px;
     color: #ffffff;
 }
+
+@media screen and (max-width: 768px) {
+    .page-footer__socials {
+        flex-direction: column;
+        margin-bottom: 16px;
+    }
+
+    .page-footer__social-item {
+        border-bottom: 1px solid #955fa4;
+        margin-right: 0;
+        margin-bottom: 8px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .page-footer__social-link {
+        font-size: 14px;
+        line-height: 17px;
+    }
+
+    .page-footer__copyright {
+        margin: 8px 0;
+    }
+}

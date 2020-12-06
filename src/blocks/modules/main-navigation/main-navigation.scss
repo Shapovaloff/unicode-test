@@ -1,6 +1,12 @@
 .main-navigation {
     flex-wrap: nowrap;
     overflow: hidden;
+
+    @media screen and (max-width: 768px) {
+        position: relative;
+        max-width: 100%;
+        margin: 0;
+    }
 }
 
 .main-navigation.js-enabled {

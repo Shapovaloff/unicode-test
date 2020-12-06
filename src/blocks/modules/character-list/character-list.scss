@@ -23,11 +23,28 @@
         grid-template-columns: repeat(6, 1fr);
         margin-top: 20px;
     }
+    @media screen and (max-width: 580px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media screen and (max-width: 370px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 .character-list__item {
     height: 116px;
     margin-bottom: 16px;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    .character-list__title {
+        margin: 0;
+        grid-row-gap: 0;
+    }
 }
 
 .character-list__link {

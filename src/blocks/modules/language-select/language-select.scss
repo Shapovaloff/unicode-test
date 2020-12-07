@@ -17,23 +17,24 @@
     font-size: 12px;
     line-height: 20px;
     color: #ffffff;
-    transition: background-color 0.2s ease, color 0.2s ease, border-radius 0.2s ease 0.2s;
+    user-select: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
 
     @media screen and (max-width: 768px) {
         display: none;
     }
 
-    &--active {
-        background-color: #fff;
-        color: $color-text;
-        border-bottom-right-radius: 0;
-        border-bottom-left-radius: 0;
-        transition: transform 0.2s;
-    }
     &:hover, &:focus {
         background-color: #fff;
         color: $color-text;
     }
+}
+
+.js-language-button--active {
+    background-color: #fff;
+    color: $color-text;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
 }
 
 .language-select__btn-mobile {
@@ -86,8 +87,6 @@
     top: 39px;
     left: 0;
     width: 100%;
-    // display: none; // временно
-    max-height: 0;
     overflow: hidden;
     background-color: #ffffff;
     border-bottom-right-radius: 20px;
@@ -98,6 +97,14 @@
         position: relative;
         top: 0;
         border-radius: 0;
+    }
+}
+
+.js-language-list {
+    display: none;
+
+    &--active {
+        display: block;
     }
 }
 

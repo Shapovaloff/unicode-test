@@ -83,6 +83,14 @@
             height: 42px;
         }
     }
+
+    @media screen and (max-width: 768px) {
+        pointer-events: none;
+
+        & img {
+            pointer-events: none;
+        }
+    }
 }
 
 .character-list__code {
@@ -92,5 +100,9 @@
 
     &:hover, &:focus {
         color: #894d9a;
+    }
+
+    @media screen and (max-width: 768px) {
+        pointer-events: none;
     }
 }

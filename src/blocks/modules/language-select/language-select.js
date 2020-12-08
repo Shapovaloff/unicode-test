@@ -34,85 +34,54 @@ if (breakpoint) {
   });  
 }
 
+const breakpointMobile = window.matchMedia('(max-width:768px)');
 
+export default function openMobileMenu() {
+    // const breakpoint = window.matchMedia('(min-width:768px)');
+    const toggleMenu = document.querySelector('.js-toggle-menu');
+    const menuNavigation = document.querySelector('.js-menu-navigation');
+    const body = document.querySelector('body');
+    const btnToLang = document.querySelector('.js-btn-mobile-lang');
+    const languageBlock = document.querySelector('.js-language-mobile');
+    const languageList = document.querySelector('.language-select');
+    const languageBtn = document.querySelector('.js-language-btn');
 
-// export default function openMobileMenu() {
-//     const breakpoint = window.matchMedia('(min-width:768px)');
+    const openMenu = function () {
+      toggleMenu.classList.add('js-toggle-menu--active');
+      menuNavigation.classList.add('js-menu-navigation--active');
+      body.style.overflow = 'hidden';
+    }
 
-//     const button = document.querySelector('.language-select__open-btn');
-//     const menu = document.querySelector('.page-header__navigation');
+    const closeMenu = function () {
+      toggleMenu.classList.remove('js-toggle-menu--active');
+      menuNavigation.classList.remove('js-menu-navigation--active');
+      body.style.overflow = 'auto';
+    }
 
+    toggleMenu.addEventListener('click', function () {
+      if (toggleMenu.classList.contains('js-toggle-menu--active')) {
+        closeMenu();
+      } else {
+        openMenu();
+      }      
+    });
 
-//     const buttonLanguage = document.querySelector('.menu-item-wrapper__link');
-//     const menuBackList = document.querySelector('.menu-back__list');
-//     const menuBtnLanguage = document.querySelector('.js-language-btn');
-//     const bodyPage = document.querySelector('body');
-//     const mainNavigation = document.querySelector('.main-navigation');
+    btnToLang.addEventListener('click', function () {
+      if (menuNavigation.classList.contains('js-menu-navigation--active')) {
+        languageBlock.classList.add('js-language-mobile--active');
+        languageList.style.transform = 'none';
+      }
+    });
 
-//     const closeMenu = () => {
-//       menu.style.transition = 'max-height 0.2s';
-//       menu.style.maxHeight = 0;
-//       bodyPage.style.overflowY = 'scroll';
-//       button.classList.remove('language-select__open-btn--active');
-//     };
+    languageBtn.addEventListener('click', function () {
+      if (languageBlock.classList.contains('js-language-mobile--active')) {
+        languageBlock.classList.remove('js-language-mobile--active');
+        languageList.style.transform = 'translateX(103%)';
+      }
+    });
+  }
 
-//     const openMenu = () => {
-//       menu.style.transition = 'max-height 0.2s';
-//       menu.style.maxHeight = 'calc(100vh - 100px)';
-//       bodyPage.style.overflowY = 'hidden';
-//       button.classList.add('language-select__open-btn--active');
-//     };
+  if (breakpointMobile) {
+    openMobileMenu();
+  }
 
-//     button.addEventListener('click', function () {
-//         if (button.classList.contains('language-select__open-btn--active')) {
-//             console.log(1)
-//             closeMenu();
-//         } else {
-//             console.log(2)
-//             openMenu();
-//         }
-//     })
-
-//     const removeClassLang = () => {
-//       menuBackList.classList.remove('menu-back__list--active');
-//       mainNavigation.style.overflowY = 'scroll';
-//     };
-
-//     const openMenuLang = () => {
-//       menuBackList.style.transition = 'transform 0.2s';
-//       menuBackList.classList.add('menu-back__list--active');
-//       mainNavigation.style.overflowY = 'hidden';
-
-//       if (menuBackList.classList.contains('menu-back__list--active')) {
-//         menuBtnLanguage.addEventListener('click', removeClassLang);
-//       } else {
-//         menuBtnLanguage.removeEventListener('click', removeClassLang);
-//       }
-//     };
-
-//     const clickButton = () => {
-//       if (button.classList.contains('language-select__open-btn--active')) {
-//         closeMenu();
-//         buttonLanguage.removeEventListener('click', openMenuLang);
-//       } else {
-//         openMenu();
-//         buttonLanguage.addEventListener('click', openMenuLang);
-//       }
-//     };
-
-//     const breakpointChecker = () => {
-//       if (breakpoint.matches === true) {
-//         button.removeEventListener('click', clickButton);
-//         bodyPage.style.overflowY = 'scroll';
-//         menu.style.maxHeight = menu.scrollHeight + 'px';
-//       } else if (breakpoint.matches === false) {
-//         button.addEventListener('click', clickButton);
-//         menu.style.maxHeight = 0;
-//       }
-//     };
-
-//     breakpoint.addListener(breakpointChecker);
-//     breakpointChecker();
-//   }
-
-//   openMobileMenu();

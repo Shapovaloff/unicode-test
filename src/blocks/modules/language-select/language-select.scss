@@ -1,5 +1,14 @@
 .language-select {
     position: relative;
+
+    @media screen and (max-width: 768px) {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: calc(100vh - 98px);
+        overflow: auto;
+        transform: translateX(103%);
+    }
 }
 
 .language-select__open-btn {
@@ -102,6 +111,10 @@
 
 .js-language-list {
     display: none;
+
+    @media screen and (max-width: 768px) {
+        display: block;
+    }
 
     &--active {
         display: block;

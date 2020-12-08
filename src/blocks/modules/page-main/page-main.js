@@ -1,13 +1,13 @@
-import tippy from 'tippy.js';
-
+import tippy, { delegate } from 'tippy.js';
 import ClipboardJS from 'clipboard';
 
 // TODO: move inside separate utils file
-const UINode = document.querySelector('#js-char-popup-ui');
-const touchScreen = ('ontouchstart' in document.documentElement);
+const UINode = document.querySelector('#js-char-popup-ui'); // место для отрисовки попапа в html
+const touchScreen = ('ontouchstart' in document.documentElement); // это означает что сейчас мобильное устройство
+const popupArea = document.querySelector('#js-char-popup-area'); // Весь блок с эелементами на которые будет наводится мышка
 
-const popupArea = document.querySelector('#js-char-popup-area');
 
+// Функция заменяет символы на unicod
 function escapeHTML(unsafe) {
   return unsafe
     .replace(/&/g, '&amp;')
@@ -71,7 +71,7 @@ function prepareContent(reference) {
   return false;
 }
 
-export default function characterPopup() {
+function characterPopup() {
   if (UINode && popupArea) {
     if (touchScreen) {
       popupArea.addEventListener('click', (event) => {
@@ -81,7 +81,7 @@ export default function characterPopup() {
         }
       });
     }
-
+    
     if (window.innerWidth < 768) {
       const tippyInstance = tippy(popupArea, {
         theme: 'light-border',
@@ -92,6 +92,36 @@ export default function characterPopup() {
         appendTo: () => document.body,
         content(reference) {
           return prepareContent(reference);
+        },
+
+        onShow() {         
+          setTimeout(() => {
+            const button = document.querySelector('.b-copy-char-button');
+            let clipboard = new ClipboardJS(button);
+            const openTooltip = () => {
+              const symbol = button.dataset.clipboardText;
+              
+              let popup = document.querySelector('.set-v2-popup')
+              let symbolCopy = popup.querySelector('.set-v2-popup-symbol');
+              symbolCopy.textContent = symbol;
+              popup.classList.add('set-v2-popup--active');
+              
+              setTimeout(() => {
+                popup.classList.remove('set-v2-popup--active')
+              }, 900)
+            };
+
+            if (button) {
+              button.addEventListener('click', openTooltip)
+            }
+            
+            }, 50);
+        },
+        onHide() {
+          const button = document.querySelector('.b-copy-char-button');
+          if (button) {
+            // button.removeEventListener('click', openTooltip)
+          }
         },
       });
 
@@ -120,10 +150,6 @@ export default function characterPopup() {
         }
       });
     } else {
-      const openTooltip = () => {
-        console.log(2)
-      }
-
       delegate(popupArea, {
         theme: 'light-border',
         interactive: true,
@@ -137,32 +163,38 @@ export default function characterPopup() {
         content(reference) {
           return prepareContent(reference);
         },
-        onShown() {
-          const button = document.querySelector('.b-copy-char-button');
-        //   let clipboard = new ClipboardJS(button);
-        //   const openTooltip = () => {
-        //     const symbol = button.dataset.clipboardText;
-            
-        //     let popup = document.querySelector('.set-v2-popup')
-        //     let symbolCopy = popup.querySelector('.set-v2-popup-symbol');
-        //     symbolCopy.textContent = symbol;
-        //     popup.classList.add('set-v2-popup--active');
-            
-        //     setTimeout(() => {
-        //       popup.classList.remove('set-v2-popup--active')
-        //     }, 900)
-        //   }
-          if (button) {
-            button.addEventListener('click', openTooltip)
-          }
+        onShow() {         
+          setTimeout(() => {
+            const button = document.querySelector('.b-copy-char-button');
+            let clipboard = new ClipboardJS(button);
+            const openTooltip = () => {
+              const symbol = button.dataset.clipboardText;
+              
+              let popup = document.querySelector('.set-v2-popup')
+              let symbolCopy = popup.querySelector('.set-v2-popup-symbol');
+              symbolCopy.textContent = symbol;
+              popup.classList.add('set-v2-popup--active');
+              
+              setTimeout(() => {
+                popup.classList.remove('set-v2-popup--active')
+              }, 900)
+            };
+
+            if (button) {
+              button.addEventListener('click', openTooltip)
+            }
+
+            }, 50);
         },
         onHide() {
           const button = document.querySelector('.b-copy-char-button');
           if (button) {
-            button.removeEventListener('click', openTooltip)
+            // button.removeEventListener('click', openTooltip)
           }
-        }
+        },
       });
     }
   }
 }
+
+characterPopup();
